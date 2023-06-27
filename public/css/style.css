@@ -1,0 +1,74 @@
+:root {
+  --textColor: rgb(218, 236, 82);
+  --primaryColor: rgb(103, 237, 103, 1);
+  --secondaryColor: rgb(219, 35, 166);
+  --fontSize: 100px;
+  --headingFont: 70px;
+  --subheading: 50px;
+}
+html,
+body {
+  margin: 0;
+  font-size: var(--fontSize);
+  color: var(--textColor);
+  font-family: 'Playfair', serif;
+
+}
+
+/*           navbar           */
+a {
+  color: #000;
+  text-decoration: none;
+}
+.nav-bar {
+  display: flex;
+  background: var(--primaryColor);
+}
+.logo-img {
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-left: 0.5rem;
+}
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 0.2rem;
+  margin-left:10%;
+}
+.search_cuisine{
+  display : inline-block;
+
+}
+.nav-bar {
+  display: flex;
+}
+.navbar_form{
+  display: flex;
+  margin-left: 40%;
+  justify-content: center;
+  align-items: center;
+}
+.navbar_form >input,button{
+  display: inline-block;
+}
+.navbar_form>input{
+  height: .2rem;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+.navbar_form>button{
+  height: .25rem;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+
+/* footer */
+p {
+  margin-top: 40%;
+  text-align: center;
+  display: block;
+  font-size: 0.2rem;
+  padding-top: 0.1rem;
+}

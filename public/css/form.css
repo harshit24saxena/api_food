@@ -1,0 +1,32 @@
+
+form{
+    position: relative;
+}
+.contact_div{
+    margin-top: 20%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    font-size: 30px;
+    outline-style: solid;
+    outline-color: var(--primaryColor);
+    color: #625f5f;
+    width: 80%;
+}
+.contact_name , .contact_email , .contact_comment{
+    width: 85%;
+    margin: 5%;
+    margin-top: 0;
+}
+.contact_label_name ,.contact_label_email,.contact_label_comment{
+    margin: 5%;
+}
+.contact_comment{
+    margin-bottom: 2%;
+}
+.contact_button{
+    margin-left: 5%;
+    margin-bottom: 2%;
+    background-color: var(--primaryColor)
+}

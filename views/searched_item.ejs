@@ -1,0 +1,34 @@
+<%- include("navbar") %>
+
+<link rel="stylesheet" href="css/detail_cuisine.css">
+
+<div class="detail_cuisine_body">
+
+  <h1>  
+      <%= heading %> 
+  </h1>
+  
+  
+  <% content.forEach((e) => { %>
+
+    <div id="content">
+
+      <h3 class="detail_cuisine_heading"><%= e.recipe.label %></h3>
+      <div class="flex_content">
+        <div class="detail_cuisine_image">
+          <img class="detail_cuisine_img" src="<%=   e.recipe.images.REGULAR.url %>" alt="" /> 
+        </div>
+        <div class="detail_cuisine_ingredents"> 
+            <% for(i=0; i<e.recipe.ingredientLines.length ; i++){ %>
+              <p class="detail_cuisine_ingredentpara"><%= e.recipe.ingredientLines[i] %></p>
+              <% } %>
+            </div>
+          </div>
+          <form class="detail_cuisine_form" action="/searched_item" method="post">
+          <a class="detail_cuisine_recipe" href="<%= e.recipe.url %>"> learn more </a>
+          <button type="submit" class="saved_recipe">save recipe</button>
+          <input type="hidden" name="saved_recipe" value="<%= e.recipe.label %>">
+        </form>
+    </div>
+  <% }) %>
+</div>

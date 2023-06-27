@@ -1,0 +1,85 @@
+:root {
+    --textColor: rgb(218, 236, 82);
+    --primaryColor: rgb(103, 237, 103, 1);
+    --secondaryColor: rgb(219, 35, 166);
+    --fontSize: 100px;
+    --headingFont: 70px;
+    --subheading: 50px;
+  }
+  html,
+  body {
+    background-color: #fdfdfd;
+    margin: 0;
+    font-size: var(--fontSize);
+    color: var(--textColor);
+    
+  }
+  .detail_cuisine_body{
+    margin: 0 0;
+  }
+  .detail_cuisine_body>h1{
+    background-color: var(--primaryColor);
+    color: #000;
+    margin: 0 0;
+    text-align: center;
+    font-size: var(--fontSize);
+  }
+  #content{
+    margin: auto;
+    text-align: center;
+    background-image: repeating-linear-gradient(#000 , #9c9c9c  );
+    width: 80%;
+  }
+  .detail_cuisine_heading{
+    display: block;
+    font-size: var(--subheading);
+    background-color: var(--primaryColor);
+    color: #000;
+  }
+  .flex_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .2rem;
+  }
+  .detail_cuisine_image{
+    padding-left:10%;
+    width: 50%;
+  }
+  .detail_cuisine_ingredents{
+    width: 50%;
+  }
+  .detail_cuisine_ingredentpara{
+    margin-top: 1%;
+  }
+  .detail_cuisine_img{
+    margin-right: .3rem;
+    width: 400px;
+    height: 400px;
+    border-radius: 10%;
+    box-shadow: 5px -5px 100px var(--primaryColor);
+  }
+  .detail_cuisine_recipe{
+    background-color: var(--secondaryColor);
+    display: inline-block;
+  }
+  .saved_recipe{
+    background-color: var(--textColor);
+    border-style: none;
+    padding: 0;
+  }
+  .detail_cuisine_form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .2rem;
+  }
+  .detail_cuisine_recipe ,   .saved_recipe{
+    border-radius: 25px;
+    font-size: .2rem;
+    width: 150px;
+    text-align: center;
+    margin-bottom: .3rem;
+  }
+
+  
