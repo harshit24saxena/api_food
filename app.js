@@ -67,13 +67,24 @@ const recipe_array = [];
 app.post("/saved_recipe" , async(req,res)=>{
 
   const recipe = req.body.saved_recipe;
+  // console.log(recipe)
+  // console.log(JSON.stringify (recipe_array))
 
-  if(JSON.stringify (recipe_array) === recipe){
-    console.log('already exist')
-  }else{
+  if(recipe_array.length == 0){
     recipe_array.push(recipe);
-    console.log(recipe_array);
+    console.log("add frist item in array")
+  }else{
+    for( i =  0; i <= recipe_array.length ; i++){
+      
+      if(JSON.stringify (recipe_array)[i] == recipe){
+        console.log('already exist')
+      }else{
+        recipe_array.push(recipe);
+        console.log(recipe_array);
+      }
+    }
   }
+
   
   
   localStorage.setItem("saved_recipe",JSON.stringify (recipe_array));
