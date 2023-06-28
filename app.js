@@ -74,16 +74,14 @@ app.post("/saved_recipe" , async(req,res)=>{
     recipe_array.push(recipe);
     console.log("add frist item in array")
   }else{
-    for( i =  0; i <= recipe_array.length ; i++){
-      
-      if(JSON.stringify (recipe_array)[i] == recipe){
-        console.log('already exist')
-      }else{
-        recipe_array.push(recipe);
-        console.log(recipe_array);
+    for( i =  0; i = recipe_array.length ; i++){
+      if(JSON.stringify (recipe_array[i]) == recipe){
+        console.log('already exist')}
       }
-    }
-  }
+        // recipe_array.push(recipe);
+        // console.log(recipe_array);
+      }
+      
 
   
   
