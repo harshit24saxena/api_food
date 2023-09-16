@@ -1,31 +1,41 @@
 <%- include("navbar") %>
+<link rel="stylesheet" href="/public/css/style.css">
+<link rel="stylesheet" href="/public/css/detail_cuisine.css">
 
-<link rel="stylesheet" href="css/detail_cuisine.css">
 
 <div class="detail_cuisine_body">
+    <h1>
+        Saved Recipe
+    </h1>
 
-  <h1>  
-      <%= heading %> 
-  </h1>
-  
-  
-  <% content.forEach((e) => { %> n
+    
+    <% content.forEach((e)=> { %>
 
-  <div id="content">
+      <div class="content">
 
-    <h3 class="detail_cuisine_heading"><%= e.recipe.label %></h3>
-    <div class="flex_content">
-      <div class="detail_cuisine_image">
-        <img class="detail_cuisine_img" src="<%=   e.recipe.images.REGULAR.url %>" alt="" /> 
-      </div>
-      <div class="detail_cuisine_ingredents"> 
-          <% for(i=0; i<e.recipe.ingredientLines.length ; i++){ %>
-            <p class="detail_cuisine_ingredentpara"><%= e.recipe.ingredientLines[i] %></p>
-            <% } %>
+        <div class="flex_content">
+          <div class="detail_cuisine_image">
+            <img class="detail_cuisine_img" src="<%=   e.recipe.images.REGULAR.url %>" alt="" />
+          </div>
+          <div class="detail_cuisine_ingredents">
+            <% for(i=0; i<e.recipe.ingredientLines.length ; i++){ %>
+              <p class="detail_cuisine_ingredentpara">
+                <%= e.recipe.ingredientLines[i] %>
+              </p>
+              <% } %>
+            </div>
+            
+        <h3 class="detail_cuisine_heading">
+          <%= e.recipe.label %>
+        </h3>
+          </div>
+
+          <a class="detail_cuisine_recipe" href="<%= e.recipe.url %>"> learn more </a>
+          <div class="detail_cuisine_save">
+            <buttom class="saved_recipe" id="saved_button" data-value="<%= e.recipe.label %>">save recipe</button>
           </div>
         </div>
-        <a class="detail_cuisine_recipe" href="<%= e.recipe.url %>"> learn more </a>
-        
-  </div>
-  <% }) %>
-</div>
+        <% }) %>
+        <script type='text/javascript' src ='/public/index.js'></script>
+      </div>
+

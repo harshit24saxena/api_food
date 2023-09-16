@@ -1,6 +1,9 @@
+body{
+  background-color: #e7e7e7c9;
+}
 .cuisine {
     color: #625f5f /*var(--secondaryColor)*/;
-    margin: 7rem 0 0.5rem 2rem;
+    margin: 3rem 0 0.5rem 1rem;
     font-size: var(--headingFont);
   }
   .card_collection {
@@ -27,23 +30,24 @@
     bottom: 3%;
     font-size: 0.2rem;
   }
-  .card p {
+  .card>p {
     display: none;
   }
-  .card button {
+  .card>button {
     display: none;
   }
   .card:hover img {
     display: none;
   }
-  .card:hover p {
+  .card:hover>p {
     font-size: 0.15rem;
     display: block;
     margin-top: 3px;
   }
   .card:hover {
-    box-shadow: 10px -10px rgba(15, 14, 14, .6);
+    box-shadow: 10px -10px 5px rgba(15, 14, 14, .6);;
     transform: translateY(-.3rem);
+    
   }
   .card>a{
     display: none;

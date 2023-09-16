@@ -1,32 +1,59 @@
-
-form{
-    position: relative;
+br{
+ display: none;
 }
-.contact_div{
-    margin-top: 20%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% , -50%);
-    font-size: 30px;
-    outline-style: solid;
-    outline-color: var(--primaryColor);
+#contact{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #2b2b2b;
+    position: relative;
+    height: fit-content;
+    margin-top: 40vh;
+
+}
+.contact_me{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    font-size: .2rem;
     color: #625f5f;
-    width: 80%;
+    width: 40vw;
+    height: fit-content;
 }
 .contact_name , .contact_email , .contact_comment{
-    width: 85%;
-    margin: 5%;
-    margin-top: 0;
+    margin-top: 5px;
+    width: 20vw;
+    height:3vh;
 }
 .contact_label_name ,.contact_label_email,.contact_label_comment{
-    margin: 5%;
+    position: relative;
+    margin: 5px;
+    color: var(--textColor);
+}
+.contact_label_name{
+    right: 100px;
+}
+.contact_label_email{
+    right:77px;
+}
+.contact_label_comment{
+    right: 110px;
 }
 .contact_comment{
-    margin-bottom: 2%;
+    margin-bottom:5px ;
 }
 .contact_button{
-    margin-left: 5%;
-    margin-bottom: 2%;
+    width: 100px;
+    height: 30px;
+    border-radius: 25px;
     background-color: var(--primaryColor)
+}
+
+.about_us{
+    height: 80%;
+    width: 40%;
+    font-size: .2rem;
 }

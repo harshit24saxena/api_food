@@ -11,9 +11,8 @@
   
   <% content.forEach((e) => { %>
 
-    <div id="content">
+    <div class="content">
 
-      <h3 class="detail_cuisine_heading"><%= e.recipe.label %></h3>
       <div class="flex_content">
         <div class="detail_cuisine_image">
           <img class="detail_cuisine_img" src="<%=   e.recipe.images.REGULAR.url %>" alt="" /> 
@@ -24,11 +23,13 @@
               <% } %>
             </div>
           </div>
-          <form class="detail_cuisine_form" action="/searched_item" method="post">
           <a class="detail_cuisine_recipe" href="<%= e.recipe.url %>"> learn more </a>
-          <button type="submit" class="saved_recipe">save recipe</button>
-          <input type="hidden" name="saved_recipe" value="<%= e.recipe.label %>">
-        </form>
+          <div class="detail_cuisine_save">
+            <button class="saved_recipe"  id="saved_button" data-value="<%= e.recipe.label %>">save recipe</button>
+          </div>
+        
+      <h3 class="detail_cuisine_heading"><%= e.recipe.label %></h3>
     </div>
   <% }) %>
+  <script type='text/javascript' src ='/public/index.js'></script>
 </div>

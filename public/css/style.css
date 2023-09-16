@@ -11,64 +11,74 @@ body {
   margin: 0;
   font-size: var(--fontSize);
   color: var(--textColor);
-  font-family: 'Playfair', serif;
-
 }
 
 /*           navbar           */
-a {
-  color: #000;
-  text-decoration: none;
+#header-sec{
+  z-index: 10;
+  top: 0px;
+  position: fixed;
+  width: 100vw;
+  background-color: #252424;
 }
-.nav-bar {
-  display: flex;
-  background: var(--primaryColor);
+a {
+  color: #fff;
+  text-decoration: none;
 }
 .logo-img {
   width: 0.5rem;
   height: 0.5rem;
   margin-left: 0.5rem;
 }
-.nav-items {
-  display: flex;
-  align-items: center;
-  gap: 0.2rem;
-  font-size: 0.2rem;
-  margin-left:10%;
-}
-.search_cuisine{
-  display : inline-block;
-
-}
 .nav-bar {
   display: flex;
 }
+.nav-items {
+  width:35vw ;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: .2rem;
+  margin-left:30vw;
+  margin-right: 5vw;
+}
+.search_cuisine{
+  display : inline-block
+}
 .navbar_form{
   display: flex;
-  margin-left: 40%;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 .navbar_form >input,button{
-  display: inline-block;
+  border: none;
+
 }
 .navbar_form>input{
+  padding-left: 10px;
+  width: 200px;
   height: .2rem;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
 }
+input:focus{
+   outline: none;
+} 
 .navbar_form>button{
-  height: .25rem;
+  width: 70px;
+  height: .215rem;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
 }
 
 
 /* footer */
-p {
-  margin-top: 40%;
+footer>p {
+  background-color: #2b2b2b;
+  color: #4a4a4a;
   text-align: center;
   display: block;
   font-size: 0.2rem;
-  padding-top: 0.1rem;
+  padding: 0;
+  margin: 0;
 }

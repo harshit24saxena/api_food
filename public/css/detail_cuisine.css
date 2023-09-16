@@ -1,6 +1,6 @@
 :root {
-    --textColor: rgb(218, 236, 82);
-    --primaryColor: rgb(104, 204, 104);
+    --textColor: rgb(255, 254, 137);
+    --primaryColor: rgb(165, 250, 165);
     --secondaryColor: rgb(219, 35, 166);
     --fontSize: 100px;
     --headingFont: 70px;
@@ -14,67 +14,73 @@
     color: var(--textColor);
     
   }
-  .detail_cuisine_body{
-    margin: 0 0;
+  #detail_cuisine_body{
+    margin: 0;
+    background-color: rgb(223, 250, 250);
   }
-  .detail_cuisine_body>h1{
-    background-color: var(--primaryColor);
+  #grid-layout{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: .4rem;
+  }
+
+  #detail_cuisine_body>h1{
+    width: fit-content;
+    margin: auto auto 1rem auto;
+    padding: .6rem 0 0 0;
+    background-image: linear-gradient(to right,#ffd977 0,#ffd977 100%);  
+    background-size: 3px 3px ;
+    background-repeat: repeat-x;
+    background-position: 0 94%;
+    font-size: var(--headingFont);
     color: #000;
-    margin: 0 0;
     text-align: center;
-    font-size: var(--fontSize);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
   }
-  #content{
-    margin: auto;
+  .content{
+    background-color: #fdfdfd;
+    display: inline;
     text-align: center;
-    background-image: repeating-linear-gradient(#000 , #9c9c9c  );
-    width: 80%;
+    width: auto;
   }
   .detail_cuisine_heading{
     display: block;
-    font-size: var(--subheading);
-    background-color: var(--primaryColor);
+    font-size: .3rem;
+    background-image: linear-gradient(to right,#ffd977 0,#ffd977 100%);  
+    background-size: 2.5px 2.5px ;
+    background-repeat: repeat-x;
+    background-position: 0 100%;
     color: #000;
+    margin-top: -10px;
   }
   .flex_content{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     gap: .2rem;
   }
-  .detail_cuisine_image{
-    padding-left:10%;
-    width: 50%;
-  }
-  .detail_cuisine_ingredents{
-    width: 50%;
-  }
-  .detail_cuisine_ingredentpara{
-    margin-top: 1%;
-  }
   .detail_cuisine_img{
-    margin-right: .3rem;
-    width: 400px;
-    height: 400px;
+    position: relative;
+    top: 40px;
+    width: 200px;
+    height: 200px;
     border-radius: 10%;
-    box-shadow: 5px -5px 100px var(--primaryColor);
   }
-  .detail_cuisine_recipe{
+  .learn_more{
     background-color: var(--secondaryColor);
-    display: inline-block;
+    color: var(--textColor);
   }
   .saved_recipe{
     background-color: var(--textColor);
+    color: var(--secondaryColor);
     border-style: none;
     padding: 0;
+    cursor: pointer;
   }
-  .detail_cuisine_form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .2rem;
-  }
-  .detail_cuisine_recipe ,   .saved_recipe{
+  .learn_more, .saved_recipe{
+    display: inline-block;
     border-radius: 25px;
     font-size: .2rem;
     width: 150px;
