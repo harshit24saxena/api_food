@@ -1,5 +1,5 @@
 const express = require("express");
-const fetch = require("node-fetch")
+import fetch from 'node-fetch';
 const bodyparser = require("body-parser");
 const nodemailer = require("nodemailer")
 require("dotenv").config();
