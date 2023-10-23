@@ -1,7 +1,7 @@
-const express = require("express");
+import express from 'express'
 import fetch from 'node-fetch';
-const bodyparser = require("body-parser");
-const nodemailer = require("nodemailer")
+import bodyparser from 'body-parser'
+import nodemailer from 'nodemailer'
 require("dotenv").config();
 
 
