@@ -8,7 +8,7 @@ dotenv.config();
 
 // local storage config
 import { LocalStorage } from 'node-localstorage';
-localStorage = new LocalStorage("./scratch");
+const localStorage = new LocalStorage("./scratch");
 
 
 // express config
