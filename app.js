@@ -2,8 +2,9 @@ import express from 'express'
 import fetch from 'node-fetch';
 import bodyparser from 'body-parser'
 import nodemailer from 'nodemailer'
-require("dotenv").config();
+import dotenv from 'dotenv';
 
+dotenv.config();
 
 // local storage config
 const { LocalStorage } = require("node-localstorage");
