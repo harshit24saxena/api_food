@@ -1,4 +1,5 @@
 const express = require("express");
+const fetch = require("node-fetch")
 const bodyparser = require("body-parser");
 const nodemailer = require("nodemailer")
 require("dotenv").config();
@@ -158,8 +159,8 @@ p.then((response)=>{
 })
 });
 
-  
+const port = process.env.PORT || 3000
 // sever port listener
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("server starting at port 3000");
 });

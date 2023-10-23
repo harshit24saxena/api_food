@@ -1,10 +1,13 @@
-/* 
 .cuisine {
-    color: #625f5f;
-    margin: 3rem 0 0.5rem 1rem;
-    font-size: var(--headingFont);
-  }
-  .card_collection {
+  color: #625f5f;
+  margin: 3rem 0 0.5rem 1rem;
+  font-size: 10vw;
+  background-image: linear-gradient(to right, #ffd977 0, #ffd977 100%);
+  background-size: 3px 3px;
+  background-repeat: repeat-x;
+  background-position: 0 94%;
+}
+/* .card_collection {
     display: grid;
     grid-template-columns: repeat(5, auto);
     gap: .1rem;
