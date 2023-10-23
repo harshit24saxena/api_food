@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // local storage config
-const { LocalStorage } = require("node-localstorage");
+import { LocalStorage } from 'node-localstorage';
 localStorage = new LocalStorage("./scratch");
 
 
