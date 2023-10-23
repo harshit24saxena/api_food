@@ -160,6 +160,6 @@ p.then((response)=>{
 
   
 // sever port listener
-// app.listen(3000, () => {
-//   console.log("server starting at port 3000");
-// });
+app.listen(3000, () => {
+  console.log("server starting at port 3000");
+});
