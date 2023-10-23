@@ -19,22 +19,21 @@ br{
     align-items: center;
     position: relative;
     font-size: .2rem;
-    color: #625f5f;
-    width: 40vw;
+    width: 45vw;
     height: fit-content;
 }
 .contact_name , .contact_email , .contact_comment{
     margin-top: 5px;
-    width: 20vw;
+    width: 100%;
     height:3vh;
+    display: block;
 }
 .contact_label_name ,.contact_label_email,.contact_label_comment{
-    position: relative;
     margin: 5px;
     color: var(--textColor);
 }
 .contact_label_name{
-    right: 100px;
+    right: 1rem;
 }
 .contact_label_email{
     right:77px;
@@ -56,4 +55,42 @@ br{
     height: 80%;
     width: 40%;
     font-size: .2rem;
+}
+form{
+    width: inherit;
+    height: inherit;
+}
+@media(max-width:950px){
+    #contact{
+        width: 100vw;
+        margin-top: 20vh;
+    }
+    .contact_name , .contact_email , .contact_comment{
+        width: 100%;
+    }
+    .contact_label_name{
+        right: 1.3rem;
+    }
+    .contact_label_email{
+        right:1.03rem;
+    }
+    .contact_label_comment{
+        right: 1.35rem;
+    }
+}
+@media(max-width: 500px){
+    #contact{
+        flex-direction: column;
+    }
+    .about_us{
+        width: 100%;
+        margin-bottom: .1rem;
+    }
+    .contact_me{
+        width: 100vh;
+    }
+    .contact_name , .contact_email , .contact_comment{
+        width: 100%;
+    }
+
 }

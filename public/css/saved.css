@@ -1,16 +1,17 @@
-
+/* 
   #detail_cuisine_body{
     margin: 0;
-    background-color: rgb(223, 250, 250);
+    height: 100vh;
   }
   #grid-layout{
+    background-color: rgb(223, 250, 250);
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: .4rem;
   }
 
   #detail_cuisine_body>h1{
-    width: fit-content; 
+    width: fit-content;
     margin: auto auto 1rem auto;
     padding: .6rem 0 0 0;
     background-image: linear-gradient(to right,#ffd977 0,#ffd977 100%);  
@@ -53,6 +54,11 @@
     height: 200px;
     border-radius: 10%;
   }
+  .detail_cuisine_CTA{
+    display: flex;
+    gap: .2rem;
+    margin-top: .3rem;
+  }
   .learn_more{
     background-color:#2b2b2b ;
   }
@@ -71,5 +77,23 @@
     text-align: center;
     margin-bottom: .3rem;
   }
-
-  
+   @media(max-width: 950px){
+    #grid-layout{
+      grid-template-columns: repeat(2, auto);
+      gap: .3rem;
+      background-color: rgb(223, 250, 250);
+    }
+    #detail_cuisine_body>h1{
+      font-size: .5rem;
+    }
+   }
+   @media (max-width: 500px) {
+     #grid-layout{
+      background-color: rgb(223, 250, 250);
+      display: flex;
+      flex-direction: column;
+    }
+    body{
+      font-size: 75px;
+    }
+   } */

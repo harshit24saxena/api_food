@@ -1,18 +1,32 @@
 <%- include("header") %>
 
-<section id="header-sec">
-  <nav class="nav-bar">
-      <img src="\public\images\pngwing.com.png" alt="logo" class="logo-img">
-        <div class="nav-items">
-          <a class="nan-link" href="/">Home</a>
-          <a class="nan-link" href="#contact">Contact</a>
-          <a class="nan-link" href="/nav_link/blog">Blog</a>
-          <a class="nan-link" href="/nav_link/saved_recipe">Saved recipes</a>
-        </div>
-      <form class="navbar_form" action="/searched_item" method="post">
-        <input type="text" name="search_cuisine" placeholder="search">
-        <button type="submit" >Search</button>
+  <section id="header-sec">
+    <div class="coverpage display">
+    </div>
+    <nav class="nav-bar flex">
+
+
+      <div class="visibleInMobile flex">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+
+      <form class="navbar_form display" action="/searched_item" method="post">
+        <input class="button" type="text" name="search_cuisine" placeholder="search">
+        <button class="button" type="submit">Search</button>
       </form>
+      
+      <div class="notvisibleInMobile display ">
+
+        <div class="nav-items flex">
+          <a href="/">Home</a>
+          <a href="http://localhost:3000/#contact" id="Contact_link">Contact</a>
+          <a href="/nav_link/saved_recipe">Saved recipes</a>
+        </div>
+
+      </div>
+
+
       </div>
     </nav>
   </section>

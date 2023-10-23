@@ -1,6 +1,4 @@
 <%- include("navbar") %>
-<link rel="stylesheet" href="css/detail_cuisine.css">
-
 
 <div id="detail_cuisine_body">
     <h1>
@@ -14,16 +12,16 @@
           <div class="flex_content">
 
             <div class="detail_cuisine_image">
-              <img class="detail_cuisine_img" src="<%=   e.recipe.images.REGULAR.url %>" alt="" />
+              <img class="detail_cuisine_img" src="<%=   e.image %>" alt="" />
             </div>
 
             <div class="detail_cuisine_CTA">
-            <a class="learn_more" href="<%= e.recipe.url%>" target="_blank"> learn more </a>
-            <buttom class="saved_recipe" id="saved_button" data-value="<%= e.recipe.label %>">save recipe</button>
+            <a class="learn_more" href="/recipe/target_recipe" value="<%= e.id %>" data-value="<%= e.title %>" target="_blank"> learn more </a>
+            <buttom class="saved_recipe" id="saved_button" data-value="<%= e.title %>">save recipe</button>
             </div>
             
             <h3 class="detail_cuisine_heading">
-              <%= e.recipe.label %>
+              <%= e.title %>
             </h3>
             
           </div>

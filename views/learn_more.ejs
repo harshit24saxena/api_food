@@ -1,5 +1,13 @@
 <%- include("navbar") %>
 
-<div class="recipe_leranmore">
-    
-</div>
+<ul>
+
+        <h1><%= heading %></h1>
+<% content.forEach((e)=> { %>
+        <li>
+           step <%= e.number %>
+            <br>
+            <%= e.step %>
+        </li>
+<% }) %>
+</ul>

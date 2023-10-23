@@ -1,26 +1,31 @@
 const express = require("express");
 const bodyparser = require("body-parser");
 const nodemailer = require("nodemailer")
-const axios = require('axios');
-const cheerio = require('cheerio');
 require("dotenv").config();
 
-const { LocalStorage } = require("node-localstorage");
 
+// local storage config
+const { LocalStorage } = require("node-localstorage");
 localStorage = new LocalStorage("./scratch");
 
+
+// express config
 const app = express();
 app.set("view engine", "ejs");
 
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public"));
-app.use("/public", express.static("public"));
+app.use("/public",express.static("public"));
+app.use( express.static(__dirname+"/public/"));
 
+
+//   home page config
 app.get("/", (req, res) => {
   res.render("cuisine");
 });
 
+
+// home page contact form config
 app.post("/", (req,res)=>{
 const CN =  req.body.C_name;
 const CE = req.body.C_email;
@@ -39,7 +44,7 @@ const Mailoption = {
     text : CC 
 }
 
-transport.sendMail(Mailoption , function(ERROR , info){
+transport.sendMail(Mailoption , function(ERROR , ){
   if(ERROR){
     res.send("<h1>cannot send message</h1>")
   }else{
@@ -50,77 +55,111 @@ res.render("cuisine")
 
 })
 
+
+// POST resquest handler for searched recipe
+app.post("/searched_item", (req, res) => {    
+  
+  const search_item = req.body.search_cuisine;
+
+  const p = fetch(
+    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.apiKey}&query=${search_item}&number=50`
+    );
+    p.then((response)=>{
+      if(!response.ok){
+        throw new Error("resquest failed")
+      }
+      return response.json()
+    }).then((data)=>{
+      data = data.results
+      res.render("searched_item", { content: data, heading: search_item });
+    })
+    });
+    
+// GET request handler for cuisine recipe
+    app.get("/:customurl", async(req, res) => {
+
+      const customUrl = req.params.customurl;
+      const p = fetch(
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.apiKey}&cuisine=${customUrl}&number=50`
+        );
+        p.then((response)=>{
+          if(!response.ok){
+            throw new Error("resquest failed")
+          }
+          return response.json()
+        }).then((data)=>{
+          data = data.results
+          res.render("detail_cuisine", { content: data, heading: customUrl });
+        })
+  });
+// saved recipe http request handler
 let array = [];
 app.post("/saved_searched_item" ,(req,res)=>{
   const parsedata = req.body.array
   array.push(parsedata);
   localStorage.setItem("saved_recipe",JSON.stringify(array))
 })
+app.post("/remove_saved_searched_item",(req,res)=>{
+  const parsedata2 = req.body.remove_array
+  let arr = JSON.parse(localStorage.getItem("saved_recipe"))
 
+  const toremove = arr.indexOf(parsedata2)
+ 
+    arr.splice(toremove, 1)
+    localStorage.setItem("saved_recipe", JSON.stringify(arr))
 
-app.post("/searched_item", (req, res) => {    
-  
-  const search_item = req.body.search_cuisine;
-  const p = fetch(
-    ` https://api.edamam.com/api/recipes/v2?type=public&q=${search_item}&app_id=c70a12ec&app_key=f050dd5ff8dfe333361453943866b5c3`
-    );
-    p.then((response) => {
-      if (!response.ok) {
-        throw new Error("resquest failed");
-      }
-      return response.json();
-    }).then((data) => {
-      data = data.hits;
-        
-        if (data == 0) {
-          res.render("cuisine");
-        } else {
-          res.render("searched_item", { content: data, heading: search_item });
-        }
-      });
-    });
-    
-    app.get("/:customurl", (req, res) => {
-      const customUrl = req.params.customurl;
-      const p = fetch(
-        `https://api.edamam.com/api/recipes/v2?type=public&q= ${customUrl}&app_id=c70a12ec&app_key=f050dd5ff8dfe333361453943866b5c3`
-        );
-        p.then((response) => {
-    if (!response.ok) {
-      throw new Error("resquest failed");
-    }
-    return response.json();
-  }).then((data) => {
-    data = data.hits;
-    res.render("detail_cuisine", { content: data, heading: customUrl });
-  });
-});
+})
 
-
+//GET request handler for saved recipe
 app.get("/nav_link/saved_recipe", async(req, res) => {
+  
   let saved_recipe = localStorage.getItem("saved_recipe");
+  if(saved_recipe.length !== 0 ){
   saved_recipe = JSON.parse(saved_recipe);
 
     const fetchpromise = saved_recipe.map(async(recipe)=>{
-      const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q= ${recipe}&app_id=c70a12ec&app_key=f050dd5ff8dfe333361453943866b5c3`)
+      const response = await fetch(  `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.apiKey}&query=${recipe}&number=1`)
    
         if(!response.ok){
           throw new Error("request failed")
         }
         const data = await response.json()
-        return data.hits[0]
-    })
+        return data.results
+      })
 
+    let recipe_data = await Promise.all(fetchpromise)
 
-    const recipe_data = await Promise.all(fetchpromise)
     res.render("saved_recipe",{content : recipe_data})
+
+    }else{
+      res.render("saved_recipe")
+    }
+
   });
-  app.get("/recipe/learn_more",(req,res)=>{
-    res.render("learn_more")
-  })
+
+// POST request handler for learn more section
+let parsedata
+  app.post("/recipe/target_recipe",(req,res)=>{
+    parsedata = req.body.target_id
+});
+
+// GET requet handler for learn more section
+ app.get("/recipe/target_recipe", (req,res)=>{
+  const [recipe_id, heading] = parsedata  
+const p =  fetch(`https://api.spoonacular.com/recipes/${recipe_id}/analyzedInstructions?apiKey=${process.env.apiKey}`)
+p.then((response)=>{
+  if(!response.ok){
+    throw new Error("resquest failed")
+  }
+  return response.json()
+}).then((data)=>{
+  array =  data[0].steps;
+  res.render("learn_more" , {content : array, heading:heading})
+})
+});
 
   
-
+// sever port listener
 app.listen(3000, () => {
   console.log("server starting at port 3000");
 });

@@ -1,22 +1,21 @@
-body{
-  background-color: #e7e7e7c9;
-}
+/* 
 .cuisine {
-    color: #625f5f /*var(--secondaryColor)*/;
+    color: #625f5f;
     margin: 3rem 0 0.5rem 1rem;
     font-size: var(--headingFont);
   }
   .card_collection {
-    display: flex;
-    gap: 0.3rem;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    gap: .1rem;
+    margin-left: .45rem;
   }
   .card {
     border-radius: 10%;
     width: 2.5rem;
     height: 3rem;
     background-color: #000;
-    color: var(--textColor);
+    color: white;
     text-align: center;
   }
   .card_img {
@@ -27,13 +26,10 @@ body{
   }
   .card h3 {
     position: relative;
-    bottom: 3%;
+    bottom: 10%;
     font-size: 0.2rem;
   }
   .card>p {
-    display: none;
-  }
-  .card>button {
     display: none;
   }
   .card:hover img {
@@ -42,28 +38,52 @@ body{
   .card:hover>p {
     font-size: 0.15rem;
     display: block;
-    margin-top: 3px;
+    margin-top: 5px;
+    padding: auto;
   }
   .card:hover {
-    box-shadow: 10px -10px 5px rgba(15, 14, 14, .6);;
+    box-shadow: 10px -10px 5px
+   rgba(15, 14, 14, .6);;
     transform: translateY(-.3rem);
-    
   }
-  .card>a{
-    display: none;
+  .card:hover>h3{
+    margin-top: 40px;
+    margin-bottom: 0;
   }
   .card:hover>a {
+    padding-top: 6px;
     text-align: center;
     display: block;
-    font-size: .2rem;
+    font-size: .16rem;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
   }
   .card>a {
+    display: none;
     width: 1rem;
     height: 0.3rem;
-    border-style: none;
-    background-color: var(--secondaryColor);
+    outline: #625f5f solid 4px;
+    background-color: black;
     border-radius: 40px;
+  } 
+
+  @media(max-width:950px){
+    .cuisine{
+      margin-top: 1.5rem;
+    }
+    .mexican{
+      grid-area: 3/-3/4/-1;
+    }
+    .card_collection{
+      justify-items: center;
+      grid-template-columns: repeat(2,auto);
+      gap: .2rem;
+      row-gap: .35rem;
   }
+  }
+  @media(max-width: 500px){
+    .card_collection{
+      display: block;
+    }
+  } */

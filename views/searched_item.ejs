@@ -1,35 +1,33 @@
 <%- include("navbar") %>
 
-<link rel="stylesheet" href="css/detail_cuisine.css">
-
-<div class="detail_cuisine_body">
-
-  <h1>  
+  <div id="detail_cuisine_body">
+    <h1>
       <%= heading %> 
-  </h1>
-  
-  
-  <% content.forEach((e) => { %>
+    </h1>
 
-    <div class="content">
+    <div id="grid-layout">
+      <% content.forEach((e)=> { %>
+        <div class="content">
 
-      <div class="flex_content">
-        <div class="detail_cuisine_image">
-          <img class="detail_cuisine_img" src="<%=   e.recipe.images.REGULAR.url %>" alt="" /> 
-        </div>
-        <div class="detail_cuisine_ingredents"> 
-            <% for(i=0; i<e.recipe.ingredientLines.length ; i++){ %>
-              <p class="detail_cuisine_ingredentpara"><%= e.recipe.ingredientLines[i] %></p>
-              <% } %>
+          <div class="flex_content">
+
+            <div class="detail_cuisine_image">
+              <img class="detail_cuisine_img" src="<%=   e.image %>" alt="" />
             </div>
+
+            <div class="detail_cuisine_CTA">
+            <a class="learn_more" href="/recipe/target_recipe" value="<%= e.id %>" data-value="<%= e.title %>" target="_blank"> learn more </a>
+            <buttom class="saved_recipe" id="saved_button" data-value="<%= e.title %>">save recipe</button>
+            </div>
+            
+            <h3 class="detail_cuisine_heading">
+              <%= e.title %>
+            </h3>
+            
           </div>
-          <a class="detail_cuisine_recipe" href="<%= e.recipe.url %>"> learn more </a>
-          <div class="detail_cuisine_save">
-            <button class="saved_recipe"  id="saved_button" data-value="<%= e.recipe.label %>">save recipe</button>
-          </div>
-        
-      <h3 class="detail_cuisine_heading"><%= e.recipe.label %></h3>
+
+        </div>
+      <% }) %>
     </div>
-  <% }) %>
   <script type='text/javascript' src ='/public/index.js'></script>
 </div>
