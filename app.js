@@ -1,13 +1,11 @@
-import express from 'express'
-import fetch from 'node-fetch';
-import bodyparser from 'body-parser'
-import nodemailer from 'nodemailer'
-import dotenv from 'dotenv';
-
-dotenv.config();
+const express = require('express') 
+const fetch = require('node-fetch') 
+const bodyparser = require('body-parser') 
+const nodemailer = require("nodemailer")
+ require("dotenv").config() ;
 
 // local storage config
-import { LocalStorage } from 'node-localstorage';
+const { LocalStorage } = require("node-localstorage") ;
 const localStorage = new LocalStorage("./scratch");
 
 
