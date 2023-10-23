@@ -90,7 +90,9 @@ app.post("/searched_item", (req, res) => {
         }).then((data)=>{
           data = data.results
           res.render("detail_cuisine", { content: data, heading: customUrl });
-        })
+        })  .catch((error) => {
+          console.error('Error:', error);
+        });
   });
 // saved recipe http request handler
 let array = [];
@@ -125,7 +127,9 @@ app.get("/nav_link/saved_recipe", async(req, res) => {
         }
         const data = await response.json()
         return data.results
-      })
+      })  .catch((error) => {
+        console.error('Error:', error);
+      });
 
     let recipe_data = await Promise.all(fetchpromise)
 
@@ -155,7 +159,9 @@ p.then((response)=>{
 }).then((data)=>{
   array =  data[0].steps;
   res.render("learn_more" , {content : array, heading:heading})
-})
+})  .catch((error) => {
+  console.error('Error:', error);
+});
 });
 
 const port = process.env.PORT || 3000
