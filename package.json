@@ -18,5 +18,7 @@
     "nodemailer": "^6.9.4"
   },
   "keywords": [],
-  "description": ""
+  "description": "",
+  "type": "module"
+
 }
