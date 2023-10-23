@@ -159,7 +159,8 @@ p.then((response)=>{
 });
 
 const port = process.env.PORT || 3000
+console.log(port);
 // sever port listener
-app.listen(port, () => {
+app.listen(3000, () => {
   console.log("server starting at port 3000");
 });
