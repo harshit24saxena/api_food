@@ -75,6 +75,7 @@ app.post("/searched_item", (req, res) => {
     })
     });
     
+    console.log(process.env.apiKey);
 // GET request handler for cuisine recipe
     app.get("/:customurl", async(req, res) => {
 
@@ -167,6 +168,6 @@ p.then((response)=>{
 const port = process.env.PORT || 3000
 console.log(port);
 // sever port listener
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("server starting at port 3000");
 });
