@@ -4,7 +4,7 @@
   "main": "app.cjs",
   "scripts": {
     "start": "node app.cjs",
-    "dev": "nodeman app.cjs",
+    "dev":"nodemon app.cjs", 
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -21,6 +21,6 @@
   "keywords": [],
   "description": "",
   "devDependencies": {
-    "nodeman": "^1.1.2"
+    "nodemon": "^3.0.1"
   }
 }

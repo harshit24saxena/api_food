@@ -75,7 +75,6 @@ app.post("/searched_item", (req, res) => {
     })
     });
     
-    console.log(process.env.apiKey);
 // GET request handler for cuisine recipe
     app.get("/:customurl", async(req, res) => {
 
