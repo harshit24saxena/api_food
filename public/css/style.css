@@ -2,7 +2,8 @@
 --primary-color : #EBEBEB;
 --accennt-color:#FFAB7F;
 --secondary-text-c: #B3B3B5;
---primary-text-c: #fff;
+--primary-text-c: #000;
+--accent-text-c : #fff;
 --bg-c : #fff;
 }
 
@@ -66,6 +67,9 @@ display: block;
   margin: 1rem 85% 0 10%;
   z-index: 12;
   width: 80%;
+}
+.contrast{
+  color: #fff;
 }
 .notvisibleInMobile{
   width: 80%;

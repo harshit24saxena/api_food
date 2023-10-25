@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // modile layout navbar menu handlerer
 
   const b_menu = document.querySelector(".fa-bars")
-  console.log(b_menu);
+
   b_menu.addEventListener("click",()=>{
     const nav_item_display = document.querySelector(".notvisibleInMobile").classList
     const coverpage = document.querySelector(".coverpage").classList
