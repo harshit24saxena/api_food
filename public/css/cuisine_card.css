@@ -10,10 +10,6 @@
   padding-top: 2rem;
   margin:0 0 0 2rem;
   font-size: 10vw;
-  background-image: linear-gradient(to right, var(--primary-text-c) 0, var(--primary-text-c)  100%);
-  background-size: 1px 1px;
-  background-repeat: repeat-x;
-  background-position: 0 94vw;
   text-decoration:underline 3px var(--primary-text-c);
   text-underline-offset: 5px;
 }
@@ -32,10 +28,26 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   margin: 2rem;
+  width: 41vh;
 }
 .card_img{
   height: 40vh;
   width: 40vh;
+}
+.cuisineHeading{
+  gap: 2rem;
+  justify-content: flex-start;
+}
+.cuisineHeading a{
+  outline: solid var(--accennt-color);
+  color: var(--accennt-color);
+  background-color: var(--bg-c);
+  padding:  0 1rem;
+}
+.card p{
+  margin-top: 0;
+}
+.card h3{
+  color: var(--primary-text-c);
 }

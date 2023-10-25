@@ -1,8 +1,8 @@
 :root{
 --primary-color : #EBEBEB;
 --accennt-color:#FFAB7F;
---secondary-text-c: #B3B3B5;
---primary-text-c: #000;
+--secondary-text-c: #7b7b7b;
+--primary-text-c: #272626;
 --accent-text-c : #fff;
 --bg-c : #fff;
 }
@@ -12,9 +12,13 @@ body,html{
   padding: 0;
   background-color: var(--bg-c);
 }
+p{
+  color: var(--secondary-text-c);
+}
 button{
   outline: none;
   background: var(--bg-c);
+  white-space: nowrap;
 }
 /* utility class */
 .button{
@@ -85,9 +89,9 @@ display: block;
   font-size: medium;
   margin-top: 5%;
 }
-.nav-items>a{
+a{
   margin: 3%;
-  color: var(--plink-c);
+  color: var(--primary-text-c);
   text-decoration: none;
 }
 .navbar_form{
@@ -113,9 +117,7 @@ display: block;
 .navbar_form>button{
   width: 30%;
 }
-/* img{
-width: 100px;
-} */
+
 
 
 

@@ -5,6 +5,8 @@ const observer = new IntersectionObserver(entries =>{
     }else if(!entries[0].isIntersecting){
         toggle.remove("contrast")
     }
+},{
+    rootMargin : "-20px",
 })
 const titleSection = document.querySelector(".header")
 observer.observe(titleSection)
