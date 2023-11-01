@@ -1,34 +1,36 @@
-br{
- display: none;
+br {
+  display: none;
 }
-#contact{
-    background-color: var(--primary-color);
+#contact {
+  background-color: var(--primary-color);
 }
-.about_us{
-    margin: 2rem;
+.about_us {
+  margin: 2rem;
 }
-.about_us_heading{
-    padding-top: 1rem;
-    text-decoration:underline 3px var(--primary-text-c);
-    text-underline-offset: 5px;
+.about_us_heading {
+  padding-top: 1rem;
+  text-decoration: underline 3px var(--primary-text-c);
+  text-underline-offset: 5px;
 }
-.contact_me{
+.contact_me {
   margin: 1rem 1rem 0 2rem;
 }
-.contact_label{
-    margin-bottom: .5rem;
+.contact_label {
+  margin-bottom: 0.5rem;
 }
-.contact_comment, .contact_name, .contact_email{
-width: 90vw;
+.contact_comment,
+.contact_name,
+.contact_email {
+  width: 85vw;
 }
-.contact_button{
-    margin: 1rem 0;
+.contact_button {
+  margin: 1rem 0;
   padding: 0 1rem;
 }
-footer{
-    background-color: var(--secondary-text-c);
-    color: gray
+footer {
+  background-color: var(--secondary-text-c);
+  color: gray;
 }
-footer p{
-    margin: 0;
+footer p {
+  margin: 0;
 }

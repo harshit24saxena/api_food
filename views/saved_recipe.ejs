@@ -8,9 +8,7 @@
 
   <% content.forEach((cont)=> { %>
     <% cont.forEach((e)=> { %>
-      <div class="content">
-
-        <div class="flex_content">
+      <div class="content flex">
 
           <div class="detail_cuisine_image">
             <img class="detail_cuisine_img" src="<%=   e.image %>" alt="" />
@@ -24,8 +22,6 @@
           <h3 class="detail_cuisine_heading">
             <%= e.title %>
           </h3>
-          
-        </div>
 
       </div>
     <% }) %>

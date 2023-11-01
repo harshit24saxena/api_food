@@ -1,4 +1,4 @@
-const express = require('express') 
+
 const fetch = require('node-fetch') 
 const bodyparser = require('body-parser') 
 const nodemailer = require("nodemailer")
@@ -7,7 +7,7 @@ const nodemailer = require("nodemailer")
 // local storage config
 const { LocalStorage } = require("node-localstorage") ;
 const localStorage = new LocalStorage("./scratch");
-
+const express = require('express') 
 
 // express config
 const app = express();
@@ -114,7 +114,7 @@ app.post("/remove_saved_searched_item",(req,res)=>{
 
 //GET request handler for saved recipe
 app.get("/nav_link/saved_recipe", async(req, res) => {
-  
+  console.log("connected");
   let saved_recipe = localStorage.getItem("saved_recipe");
   if(saved_recipe.length !== 0 ){
   saved_recipe = JSON.parse(saved_recipe);
@@ -127,9 +127,7 @@ app.get("/nav_link/saved_recipe", async(req, res) => {
         }
         const data = await response.json()
         return data.results
-      })  .catch((error) => {
-        console.error('Error:', error);
-      });
+      })  
 
     let recipe_data = await Promise.all(fetchpromise)
 
@@ -164,9 +162,8 @@ p.then((response)=>{
 });
 });
 
-const port = process.env.PORT || 3000
-console.log(port);
 // sever port listener
+const port = process.env.PORT || 3000
 app.listen(port, () => {
-  console.log("server starting at port 3000");
+  console.log("server starting at port "+port );
 });

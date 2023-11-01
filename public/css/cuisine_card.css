@@ -9,7 +9,6 @@
   width: 70vw;
   padding-top: 2rem;
   margin:0 0 0 2rem;
-  font-size: 10vw;
   text-decoration:underline 3px var(--primary-text-c);
   text-underline-offset: 5px;
 }
@@ -20,20 +19,20 @@
 
 /* cuisine card */
 .card_collection{
-  display: grid;
-  grid-template-columns: repeat(auto-fit ,minmax(40vh , 1fr));
-  gap: 2rem;
+  margin: 1rem;
 }
+
 .card{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 2rem;
-  width: 41vh;
+  width: 80vw;
+  margin: auto;
+  margin-bottom: 2rem;
 }
 .card_img{
   height: 40vh;
-  width: 40vh;
+  width: 100%;
 }
 .cuisineHeading{
   gap: 2rem;
@@ -50,4 +49,19 @@
 }
 .card h3{
   color: var(--primary-text-c);
+}
+@media (min-width:750px) {
+  .cuisineHeading a:hover{
+    outline-color: var(--primary-text-c);
+    color: var(--primary-text-c);
+  }
+  section{
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+  }
+  .heading-cuisine{
+    width: 20vw;
+  }
+  
 }
