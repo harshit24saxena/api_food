@@ -119,6 +119,9 @@ a{
 .visibleInMobile{
   margin: -1rem 91% .5em 1rem;
  }
+.navbar_form{
+  top: -.5rem;
+ }
 }
 @media(min-width:1300px){
   .visibleInMobile{
