@@ -3,6 +3,8 @@ br {
 }
 #contact {
   background-color: var(--primary-color);
+  width:1200px;
+  margin: 0 0 0 auto;
 }
 .about_us {
   margin: 2rem;
@@ -22,6 +24,7 @@ br {
 .contact_name,
 .contact_email {
   width: 85vw;
+  display: block;
 }
 .contact_button {
   margin: 1rem 0;
@@ -33,4 +36,30 @@ footer {
 }
 footer p {
   margin: 0;
+}
+@media (min-width: 750px) {
+  .contact_label {
+    margin-bottom: 0rem;
+  }
+  .contact_comment,
+.contact_name,
+.contact_email {
+  width: 90vw;
+}
+}
+@media (min-width:1100PX) {
+  .about_us{
+    margin: 0;
+  }
+#contact{
+  display: flex;
+}
+.contact_comment,
+.contact_name,
+.contact_email {
+  width: 40vw;
+}
+.about_us{
+  margin-top: 0;
+}
 }

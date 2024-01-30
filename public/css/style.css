@@ -1,16 +1,15 @@
 :root{
---primary-color : #d6d6d6;
+--primary-color : #e1e1e1;
 --accennt-color:#FFAB7F;
 --secondary-text-c: #7b7b7b;
 --primary-text-c: #272626;
 --accent-text-c : #fff;
---bg-c : #fff;
+--bg-c : var(--accent-text-c);
 }
 
 body,html{
   margin: 0;
   padding: 0;
-  background-color: var(--bg-c);
 }
 p{
   color: var(--secondary-text-c);
@@ -47,10 +46,10 @@ button{
 }
 #header-sec{
 position: fixed;
-background-color: var(--primary-c);
 width: 100vw;
 height: fit-content;
 display: block;
+z-index: 10;
 }
 .nav-bar{
   flex-direction: column;
@@ -60,17 +59,16 @@ display: block;
 
 .fa-bars{
   font-size: 2.4rem;
-  color: var(--accennt_color);
   margin-right: 1.5vh;
 }
 .fa-magnifying-glass{
   font-size: 2rem;
-  color: var(--accennt_color);
 }
 .visibleInMobile{
-  margin: 1rem 85% 0 10%;
+  margin: .5rem 91% .5em 4rem;
   z-index: 12;
   width: 80%;
+  color: var(--accennt-color);
 }
 .contrast{
   color: #fff;
@@ -117,6 +115,17 @@ a{
 .navbar_form>button{
   width: 30%;
 }
+@media(min-width:1100px){
+.visibleInMobile{
+  margin: -1rem 91% .5em 1rem;
+ }
+}
+@media(min-width:1300px){
+  .visibleInMobile{
+    color: black;
+  }
+}
+
 
 
 

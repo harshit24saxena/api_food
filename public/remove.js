@@ -17,3 +17,4 @@ element.forEach((e) => {
         location.reload(true);    
    });
 });
+

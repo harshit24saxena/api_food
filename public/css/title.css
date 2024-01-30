@@ -22,12 +22,11 @@ body {
 }
 
 .title_section {
-  width: 40vw;
-  height: fit-content;
-  top: 40vw;
+  top: 20vw; 
   color: var(--accent-text-c);
   position: absolute;
   line-height: .5rem;
+  margin: 2rem;
 }
 
 .title {
@@ -37,4 +36,22 @@ body {
 .title-quote {
   font-size: 4vw;
   white-space: nowrap;
+}
+@media(min-width:1100px){
+  .header{
+    width:1200px;
+    height: 900px;
+    margin: 2rem 0 0 auto;
+  }
+  .title-img{
+    width: 900px;
+    margin-left: 700px;
+    margin-top: 0;
+  }
+  .title {
+    font-size: 5rem;
+  }
+  .title-quote {
+    font-size: 2.2rem;
+  }
 }

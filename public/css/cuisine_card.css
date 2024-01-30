@@ -7,7 +7,7 @@
 .cuisine {
   color: var(--primary-text-c);
   width: 70vw;
-  padding-top: 2rem;
+  padding-top: 1rem;
   margin:0 0 0 2rem;
   text-decoration:underline 3px var(--primary-text-c);
   text-underline-offset: 5px;
@@ -44,9 +44,7 @@
   background-color: var(--bg-c);
   padding:  0 1rem;
 }
-.card p{
-  margin-top: 0;
-}
+
 .card h3{
   color: var(--primary-text-c);
 }
@@ -55,13 +53,61 @@
     outline-color: var(--primary-text-c);
     color: var(--primary-text-c);
   }
-  section{
-    display: flex;
-    height: fit-content;
-    width: fit-content;
+  #cuisine{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    margin: 2rem ;
+    gap: 1rem;
   }
   .heading-cuisine{
+    background-color: #fff;
     width: 20vw;
   }
+  .cuisine{
+    margin:0;
+    padding: 0;
+  }
+  .des{
+    padding: .5rem 0 0 0;
+    margin: 0;
+  }
+  .card_img{
+    max-height: 20.5rem;
+  }
+  .card{
+    display: grid;
+    width: 35vw;
+    grid-template-rows: subgrid;
+    grid-row : span 3;
+  }
+
+  .card_collection{
+    max-width: 60vw;
+    display: grid;
+    grid-column-gap: 1rem;
+    grid-template-columns: repeat(2, 35vw);
+    margin: 0;
+  }
   
+}
+@media(min-width:1100px){
+
+.card_collection{
+  grid-template-columns: repeat(2, 360px);
+  column-gap: 5rem;
+  margin-left: 2rem;
+  }
+  .card{
+    width: 360px;
+  }
+  #cuisine{
+    width:1200px;
+    margin: 1rem 0 0 auto;
+    grid-column-gap: 1.5rem;
+    
+  }
+  .des{
+    width: 15rem;
+  }
 }
