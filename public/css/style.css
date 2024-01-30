@@ -68,7 +68,7 @@ z-index: 10;
   margin: .5rem 91% .5em 4rem;
   z-index: 12;
   width: 80%;
-  color: var(--accennt-color);
+  color: black;
 }
 .contrast{
   color: #fff;
@@ -122,11 +122,6 @@ a{
 .navbar_form{
   top: -.5rem;
  }
-}
-@media(min-width:1300px){
-  .visibleInMobile{
-    color: black;
-  }
 }
 
 
