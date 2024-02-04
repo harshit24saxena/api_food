@@ -1,6 +1,4 @@
-br {
-  display: none;
-}
+
 #contact {
   background-color: var(--primary-color);
 }
@@ -44,7 +42,7 @@ footer p {
   width: 90vw;
 }
 }
-@media (min-width:1100PX) {
+@media (min-width:1200PX) {
 #contact{
   display: flex;
   width: 1200px;

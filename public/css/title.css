@@ -8,7 +8,6 @@ body {
 }
 
 .header{
-  background-color: var(--primary-color);
   background-image: url("/public/images/newBG.jpeg");
   background-size: contain;
   background-repeat: no-repeat;
@@ -17,11 +16,7 @@ body {
   overflow: hidden;
 }
 
-.title-img {
-  width: 80vw;
-  margin-left: 60vw;
-  margin-top: 15vw;
-}
+
 
 .title_section {
   top: 20vw; 
@@ -32,11 +27,11 @@ body {
 }
 
 .title {
-  font-size: 8vw;
+  font-size: clamp(2rem, 12vw , 5rem);
   white-space: nowrap;
 }
 .title-quote {
-  font-size: 4vw;
+  font-size: clamp(1rem,4vw, 2rem);
   white-space: nowrap;
 }
 @media(min-width:1100px){
@@ -44,16 +39,7 @@ body {
     width:1200px;
     height: 700px;
     margin: 2rem 2rem 0 auto;
+    background-size: 1130px;
   }
-  .title-img{
-    width: 900px;
-    margin-left: 700px;
-    margin-top: 0;
-  }
-  .title {
-    font-size: 5rem;
-  }
-  .title-quote {
-    font-size: 2.2rem;
-  }
+
 }

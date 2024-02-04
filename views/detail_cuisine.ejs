@@ -13,15 +13,14 @@
               <img class="detail_cuisine_img" src="<%=   e.image %>" alt="" />
             </div>
 
-            <div class="detail_cuisine_CTA flex">
-            <a class="learn_more button" href="/recipe/target_recipe" value="<%= e.id %>" data-value="<%= e.title %>" target="_blank"> learn more </a>
-            <buttom class="saved_recipe button" id="saved_button" data-value="<%= e.title %>">save recipe</button>
-            </div>
-            
             <h3 class="detail_cuisine_heading">
               <%= e.title %>
             </h3>
 
+            <div class="detail_cuisine_CTA flex">
+            <a class="learn_more button" href="/recipe/target_recipe" value="<%= e.id %>" data-value="<%= e.title %>" target="_blank"> let's make it </a>
+            </div>
+                   
         </div>
       <% }) %>
     </div>

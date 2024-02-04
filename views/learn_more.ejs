@@ -2,12 +2,15 @@
 
 <ul>
 
-        <h1><%= heading %></h1>
+        <h1 class="recipe_name"><%= heading %></h1>
 <% content.forEach((e)=> { %>
-        <li>
-           step <%= e.number %>
+
+        <li class="recipe_step">
+            step <%= e.number %>
             <br>
-            <%= e.step %>
-        </li>
+            <%= e.step %>    
+        </li>      
+
 <% }) %>
 </ul>
+<script src="/public/index.js" type="text/javascript"></script>

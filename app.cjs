@@ -156,7 +156,7 @@ p.then((response)=>{
   return response.json()
 }).then((data)=>{
   array =  data[0].steps;
-  res.render("learn_more" , {content : array, heading:heading})
+  res.render("learn_more" , {content : array , heading:heading})
 })  .catch((error) => {
   console.error('Error:', error);
 });

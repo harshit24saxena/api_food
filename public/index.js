@@ -1,29 +1,12 @@
-// for saving recipe
-var dataValue;
+
 const element = document.querySelectorAll("div.content");
-element.forEach((e) => {
-
-  const save_button = e.lastElementChild.children[1].lastElementChild;
-  save_button.addEventListener("click", () => {
-    const Value = save_button.getAttribute("data-value");
-    dataValue = Value;
-   })
-
-  save_button.addEventListener("click", () => {
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", "/saved_searched_item", true);
-    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    xhr.send(JSON.stringify({ array: 
-    dataValue }));
-  });
-});
 
 
 // for learn more functionality
 
 var target_recipe_id =[];
 element.forEach((e) => {
-  const learn_more = e.lastElementChild.children[1].firstElementChild;
+  const learn_more = e.lastElementChild.firstElementChild
   learn_more.addEventListener("click", () => {
     const value1 = learn_more.getAttribute("value");
     const value2 = learn_more.getAttribute("data-value");
@@ -61,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   b_menu.addEventListener("click",()=>{
     const nav_item_display = document.querySelector(".notvisibleInMobile").classList
     const coverpage = document.querySelector(".coverpage").classList
+    console.log(nav_item_display);
     
     if(nav_item_display[1]  == "display"){
       nav_item_display .remove("display")

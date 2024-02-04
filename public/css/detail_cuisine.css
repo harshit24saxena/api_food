@@ -4,37 +4,68 @@
   }
   #grid-layout{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(20vh , 1fr));
     gap: .4rem;
+    background-color: var(--primary-color);
   }
   .content{
     flex-direction: column;
   }
   #detail_cuisine_body>h1{ 
-    margin:auto auto 1rem 7rem;
-    padding-top: .5rem;
+    margin:auto auto 1rem 5.5rem;
     font-family: 'Roboto', sans-serif;
-    font-size: 10vh;
+    font-size: 2.5rem;
     text-decoration:underline 3px var(--primary-text-c);
     text-underline-offset: 5px;
     white-space: nowrap;
+    text-align: center;
   }
 
   .detail_cuisine_heading{
     color: var(--primary-text-c);
-    align-self: baseline;
-    margin: 0 0 2rem 0;
   }
   .detail_cuisine_img{
-    height: 40vh;
+    height:15rem;
     width: 100%;
   }
   .detail_cuisine_CTA{
-    width: 45vh;
-    align-self: baseline;
-    margin-left: 1rem;
+    width: fit-content;
+    margin-bottom: 2rem;
+
   }
-  .learn_more, .saved_recipe{
+  .learn_more{
     padding: 0 2rem;
     white-space: nowrap;
+  }
+  @media (min-width:750px) {
+    #detail_cuisine_body>h1{ 
+      font-size: 4.5rem;
+      margin: 1rem 0;
+    }
+    #grid-layout{
+    grid-template-columns: repeat(2,minmax(20rem , 1fr));
+    max-width: 760px;
+    margin: 0 0 0 auto;
+    }
+    .content{
+      align-items: baseline;
+    }
+  }
+  @media (min-width:1000px) {
+    #grid-layout{
+      grid-template-columns: repeat(2,minmax(30rem , 1fr));
+      max-width: 960px;
+    }
+    .content:nth-of-type(even){
+      margin-top: 10rem;
+    }
+    .detail_cuisine_img{
+      height:20rem;
+      width: 100%;
+    }
+
+  }
+  @media (min-width:1200px) {
+    #grid-layout{
+      margin: 0 0 0 25vw;
+    }
   }

@@ -1,5 +1,5 @@
 :root{
---primary-color : #e1e1e1;
+--primary-color : #edf2ea;
 --accennt-color:#FFAB7F;
 --secondary-text-c: #7b7b7b;
 --primary-text-c: #272626;
@@ -14,11 +14,16 @@ body,html{
 p{
   color: var(--secondary-text-c);
 }
+a{
+  text-decoration: none;
+}
+
 button{
   outline: none;
   background: var(--bg-c);
   white-space: nowrap;
 }
+
 /* utility class */
 .button{
   outline: solid var(--accennt-color);
@@ -43,6 +48,7 @@ button{
   width: 100vw;
   background: linear-gradient( white ,#d6d6d6);
   opacity: .5;
+  top: -2rem;
 }
 #header-sec{
 position: fixed;
@@ -65,7 +71,7 @@ z-index: 10;
   font-size: 2rem;
 }
 .visibleInMobile{
-  margin: .5rem 91% .5em 4rem;
+  margin: 0rem 91% .5em 4rem;
   z-index: 12;
   width: 80%;
   color: black;
@@ -74,10 +80,9 @@ z-index: 10;
   color: #fff;
 }
 .notvisibleInMobile{
-  width: 80%;
-  height: fit-content;
+  width: 100%;
+  height: 100vh;
   flex-direction: column;
-  gap: 1rem;
 }
 .nav-items{
   z-index: 10;
@@ -85,16 +90,16 @@ z-index: 10;
   align-items: start;
   width: 100%;
   font-size: medium;
-  margin-top: 5%;
+  margin-top: 2rem;
+  padding-bottom: 60vh;
 }
-a{
-  margin: 3%;
+.nav-CTA{
+  margin: 0 0 2rem 15rem;
   color: var(--primary-text-c);
-  text-decoration: none;
 }
 .navbar_form{
   position: absolute;
-  top: 1rem;
+  top: -.1rem;
   z-index: 10;
   width: 50%;
   animation: search .5s forwards;
@@ -116,11 +121,9 @@ a{
   width: 30%;
 }
 @media(min-width:1100px){
-.visibleInMobile{
-  margin: -1rem 91% .5em 1rem;
- }
+
 .navbar_form{
-  top: -.5rem;
+  top: -.1rem;
  }
 }
 
